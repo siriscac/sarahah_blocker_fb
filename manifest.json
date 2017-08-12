@@ -10,10 +10,5 @@
   },
   "permissions": [
      "activeTab", "tabs"
-  ],
-  "content_scripts": [{
-      "js" : ["rembrandt.min.js", "sblocker.js"],
-      "matches":["https://www.facebook.com/*"]
-    }
   ]
 }

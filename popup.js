@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log(checkPageButton);
   checkPageButton.addEventListener('click', function() {
     chrome.tabs.getSelected(null, function(tab) {
-      chrome.tabs.executeScript({
-        tabId: tab.id,
+      var id = tab.id;
+      console.log("Blocking posts on tab " + id);
+      chrome.tabs.executeScript(id, {
         file: "rembrandt.min.js"
       });
-      chrome.tabs.executeScript({
-        tabId: tab.id,
+      chrome.tabs.executeScript(id, {
         file: "sblocker.js"
       });
     });
