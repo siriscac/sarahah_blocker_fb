@@ -1,49 +1,32 @@
+var checked = {};
+
 function blockPosts() {
   var ca = document.getElementsByClassName("scaledImageFitWidth");
   for(i=0; i < ca.length; i++) {
     var ele = ca[i];
-
-    rembrandt = new Rembrandt({
-      // `imageA` and `imageB` can be either Strings (file path on node.js,
-      // public url on Browsers) or Buffers
-      imageA: 'https://raw.githubusercontent.com/siriscac/sarahah_blocker_fb/master/ref/base.png',
-      imageB: ele.getAttribute("src"),
-
-      // Needs to be one of Rembrandt.THRESHOLD_PERCENT or Rembrandt.THRESHOLD_PIXELS
-      thresholdType: Rembrandt.THRESHOLD_PERCENT,
-
-      // The maximum threshold (0...1 for THRESHOLD_PERCENT, pixel count for THRESHOLD_PIXELS
-      maxThreshold: 0.01,
-
-      // Maximum color delta (0...255):
-      maxDelta: 20,
-
-      // Maximum surrounding pixel offset
-      maxOffset: 0,
-
-      renderComposition: true, // Should Rembrandt render a composition image?
-      compositionMaskColor: Rembrandt.Color.RED // Color of unmatched pixels
-    });
-
-    // Run the comparison
-    rembrandt.compare().then(function (result) {
-        // console.log('Passed:', result.passed)
-        // console.log('Pixel Difference:', result.differences, 'Percentage Difference', result.percentageDifference, '%')
-        if(result.percentageDifference < 25) {
-          findAndHide(ele);
-        }
-    }).catch((e) => {
-        console.error(e)
-    });
+    //if image is not checked already
+    if(!checked[ele.getAttribute("src")]) {
+      checked[ele.getAttribute("src")] = true;
+      resemble('https://raw.githubusercontent.com/siriscac/sarahah_blocker_fb/master/ref/base.png').compareTo(ele.getAttribute("src")).scaleToSameSize().onComplete(function(data){
+    	   //console.log(data);
+         if(data.rawMisMatchPercentage < 30) {
+           findAndHide(ele, ele.getAttribute("src"));
+         }
+      });
+    }
   }
 }
 
-function findAndHide(parent) {
-  if(parent.id.indexOf("hyperfeed_story_id") !== -1) {
-    parent.style.display = "none";
-    console.log("Hiding Sarahah post");
+function findAndHide(parent, src) {
+  if(parent != null) {
+    if(parent.id.indexOf("hyperfeed_story_id") !== -1) {
+      parent.style.display = "none";
+      console.log("Hiding Sarahah post with id " + parent.id + " and image " + src);
+    } else {
+      findAndHide(parent.parentElement, src);
+    }
   } else {
-    findAndHide(parent.parentElement);
+    console.log("Couldn't hide Sarahah post");
   }
 }
 

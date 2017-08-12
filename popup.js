@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var id = tab.id;
       console.log("Blocking posts on tab " + id);
       chrome.tabs.executeScript(id, {
-        file: "rembrandt.min.js"
+        file: "resemble.js"
       });
       chrome.tabs.executeScript(id, {
         file: "sblocker.js"
