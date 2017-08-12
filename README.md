@@ -3,15 +3,15 @@
 Annoyed by all those Sarahah images on Facebook? Use this extension to block them all. 
 
 ## How to install?
-1) Download and Extract the Extension bundle from `releases`
-2) Goto `chrome://extensions`
-3) Enable Developer mode and then click `Load unpacked extension` button on the extensions.
+1) Download and Extract the Extension bundle from the [releases](https://github.com/siriscac/sarahah_blocker_fb/releases) section
+2) Goto the Extensions(chrome://extensions) page
+3) Enable Developer mode and then click `Load unpacked extension` button.
 4) Load the extracted bundle
-5) Now you'll see the extension on the extensions bar, open and click `Block Posts` to block all Sarahah images.
+5) Now you'll see the extension on the extensions bar, open and click `Block Posts` while on Facebook to block all Sarahah images.
 6) `innerPeace = "achieved"`.
 
 ## How does it work?
-This extension uses Resemble JS library to compare the images with the reference image under `/ref/base.png` and hides the post that have similar images.
+This extension uses Resemble JS library to compare the images on your feed with the reference image under `/ref/base.png` and hides the post that might have a similar one.
 
 ## Disclaimer
 This solution was put together in an hour's time and hence, it's not an optimal one. Your facebook tab might get slow or  unresponsive occasionally while using this extension - to fix this, simply reload the page and block posts again.
