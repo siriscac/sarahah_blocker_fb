@@ -11,10 +11,10 @@ Annoyed by all those Sarahah images on Facebook? Use this extension to block the
 6) `innerPeace = "achieved"`.
 
 ## How does it work?
-This extension uses Rembrandt library to compare the images with the reference image under `/ref/base.png` and hides the post that have similar images.
+This extension uses Resemble JS library to compare the images with the reference image under `/ref/base.png` and hides the post that have similar images.
 
 ## Disclaimer
-This solution was put together in an hour's time and hence, it's not an optimal one. Your facebook tab might get slow unresponsive sometimes while you use this extension - to fix this, simply reload the page and block posts again.
+This solution was put together in an hour's time and hence, it's not an optimal one. Your facebook tab might get slow or  unresponsive occasionally while using this extension - to fix this, simply reload the page and block posts again.
 
 ## License
 
