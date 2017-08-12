@@ -4,7 +4,7 @@ Annoyed by all those Sarahah images on Facebook? Use this extension to block the
 
 ## How to install?
 1) Download Extension bundle from `releases` and extract
-2) Goto [chrome://extensions]
+2) Goto `chrome://extensions`
 3) Enable Developer mode and then click `Load unpacked extension` button on the extensions.
 4) Load the extracted bundle
 5) Now you'll see the extension on the extensions bar, open and click `Block Posts` to block all Sarahah images.
