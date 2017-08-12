@@ -3,7 +3,7 @@
 Annoyed by all those Sarahah images on Facebook? Use this extension to block them all. 
 
 ## How to install?
-1) Download Extension bundle from `releases` and extract
+1) Download and Extract the Extension bundle from `releases`
 2) Goto `chrome://extensions`
 3) Enable Developer mode and then click `Load unpacked extension` button on the extensions.
 4) Load the extracted bundle
@@ -12,6 +12,9 @@ Annoyed by all those Sarahah images on Facebook? Use this extension to block the
 
 ## How does it work?
 This extension uses Rembrandt library to compare the images with the reference image under `/ref/base.png` and hides the post that have similar images.
+
+## Disclaimer
+This solution was put together in a hour's time and hence, it's not an optimal one. Your facebook tab might get slow unresponsive sometimes while you use this extension - to fix this, simply reload the page and block posts again.
 
 ## License
 
