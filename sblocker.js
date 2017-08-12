@@ -1,5 +1,5 @@
 function blockPosts() {
-  var ca = document.getElementsByClassName("_4-eo _2t9n _50z9");
+  var ca = document.getElementsByClassName("scaledImageFitWidth");
   for(i=0; i < ca.length; i++) {
     var ele = ca[i];
 
@@ -7,7 +7,7 @@ function blockPosts() {
       // `imageA` and `imageB` can be either Strings (file path on node.js,
       // public url on Browsers) or Buffers
       imageA: 'https://raw.githubusercontent.com/siriscac/sarahah_blocker_fb/master/ref/base.png',
-      imageB: ele.getAttribute("data-ploi"),
+      imageB: ele.getAttribute("src"),
 
       // Needs to be one of Rembrandt.THRESHOLD_PERCENT or Rembrandt.THRESHOLD_PIXELS
       thresholdType: Rembrandt.THRESHOLD_PERCENT,
@@ -39,7 +39,7 @@ function blockPosts() {
 }
 
 function findAndHide(parent) {
-  if(parent.classList.contains("k__2iuiywa1")) {
+  if(parent.id.indexOf("hyperfeed_story_id") !== -1) {
     parent.style.display = "none";
     console.log("Hiding Sarahah post");
   } else {
@@ -53,19 +53,15 @@ var postCount = 0;
 var observer = new MutationObserver(function(mutations, observer) {
     // fired when a mutation occurs
     //console.log(mutations, observer);
-    //blockPosts();
-    var posts = document.getElementsByClassName("_5jmm _5pat _3lb4 k__2iuiywa1");
-    if(posts.length > postCount) {
-      postCount = posts.length;
-      blockPosts();
-    }
+    blockPosts();
 });
 
 blockPosts();
+var loader = document.querySelectorAll('[role="feed"]')[0].childNodes[2];
 
 // define what element should be observed by the observer
 // and what types of mutations trigger the callback
-observer.observe(document, {
+observer.observe(loader, {
   subtree: true,
   attributes: true
 });
