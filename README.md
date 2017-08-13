@@ -11,7 +11,7 @@ Annoyed by all those Sarahah images and links on Facebook? Use this extension to
 6) `innerPeace = "achieved"`.
 
 ## How does it work?
-This extension uses Resemble JS library to compare the images on your feed with the reference image under `/ref/base.png` and hides the post that might have a similar one. It also checks if any anchor element that might contain the text "sarahah" in its href and hides the post if it does.
+This extension uses [Resemble JS](https://github.com/Huddle/Resemble.js/) library to compare the images on your feed with the reference image under `/ref/base.png` and hides the post that might have a similar one. It also checks if any anchor element that might contain the text "sarahah" in its href and hides the post if it does.
 
 ## Disclaimer
 This solution was put together in an hour's time and hence, it's not an optimal one. Your facebook tab might get slow or unresponsive occasionally while using this extension - to fix this, simply reload the page and block posts again.
