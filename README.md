@@ -1,11 +1,11 @@
-# Sarahah posts Blocker for Facebook - Chrome Extension
+# Sarahah posts Blocker for Facebook - Chrome and Firefox Extension
 
 Annoyed by all those Sarahah images and links on Facebook? Use this extension to block them all.
 
 ## How to install?
 1) Download and Extract the Extension bundle from the [releases](https://github.com/siriscac/sarahah_blocker_fb/releases) section
-2) Goto the Extensions(chrome://extensions) page
-3) Enable Developer mode and then click `Load unpacked extension` button.
+2) Goto the Extensions(chrome://extensions) page for Chrome and (about:debugging) for Firefox
+3) Enable Developer mode and then click `Load unpacked extension` button for Chrome. For Firefox, click `Load temporary add-on` and load the manifest.json file. 
 4) Load the extracted bundle
 5) Now you'll see the extension on the extensions bar, open and click `Block Posts` while on Facebook to block all Sarahah images.
 6) `innerPeace = "achieved"`.
